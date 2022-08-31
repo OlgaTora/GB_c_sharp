@@ -37,8 +37,19 @@
 //Task 6
 //напишите программу, которая на вход принимает число и выдает, является ли оно четным (да, нет)
 
-Console.WriteLine("Введите три числа через enter");
-int a = int.Parse(Console.ReadLine()),
+// Console.WriteLine("Введите число:");
+// int a = int.Parse(Console.ReadLine());
+
+// if (a % 2 == 0)
+// {
+//     Console.WriteLine("да");
+
+// }
+// else
+// {
+//     Console.WriteLine("нет");
+
+// }
 
 //Task 8
 //напишите программу, которая на вход принимает число N, а на выходе показывает
