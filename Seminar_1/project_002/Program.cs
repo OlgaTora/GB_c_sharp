@@ -60,6 +60,6 @@
 // int x = 2;
 // while(x < number)
 // {
-//     Console.WriteLine(x);
+//     Console.Write(x + " ");
 //     x += 2;
 // }
