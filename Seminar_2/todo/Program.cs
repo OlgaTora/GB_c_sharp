@@ -39,17 +39,5 @@
 //обозначающую день недели, и проверяет, является ли этот день выходным.
 // 6 -> да 7 -> да 1 -> нет
 
-// void CheckDayOff(int day)
-// {
-//     if (day < 8 & day > 0)
-//         {
-//             if (day < 6 & day > 0) Console.WriteLine("нет");
-//             else Console.WriteLine("да");
-//         }
-//     else Console.WriteLine("Порядковый номер дня должен быть от 1 до 7");
-//     }
+// 
 
-// Console.WriteLine("Введите порядковый номер дня недели");
-// int day = int.Parse(Console.ReadLine());
-
-// CheckDayOff(day);
