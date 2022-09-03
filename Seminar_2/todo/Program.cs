@@ -2,15 +2,15 @@
 //и на выходе показывает вторую цифру этого числа.
 // 456 -> 5 782 -> 8 918 -> 1
 
-void SecondDigit(int x)
-{
-    if (Math.Abs(x) > 99 & Math.Abs(x) < 1000) Console.WriteLine((Math.Abs(x) / 10) % 10);
-    else Console.WriteLine("Неправильно введено число");
-}
-Console.WriteLine("Введите трехзначное число");
-int x = int.Parse(Console.ReadLine());
+// void SecondDigit(int x)
+// {
+//     if (Math.Abs(x) > 99 & Math.Abs(x) < 1000) Console.WriteLine((Math.Abs(x) / 10) % 10);
+//     else Console.WriteLine("Неправильно введено число");
+// }
+// Console.WriteLine("Введите трехзначное число");
+// int x = int.Parse(Console.ReadLine());
 
-SecondDigit(x);
+// SecondDigit(x);
 
 // Задача 13: Напишите программу, которая выводит третью цифру заданного числа или
 //сообщает, что третьей цифры нет.
@@ -18,11 +18,20 @@ SecondDigit(x);
 
 // void ThirdDigit(int x)
 // {
-//     if (x / 100 > 0) Console.WriteLine((x / 100) % 10);
-//     else Console.WriteLine("третьей цифры нет");
+//     if (x > 99)
+//     {
+//         while (x / 1000 > 0)
+//         {
+//             x = x / 10;
+//         }
+//          x = x % 10;
+//         Console.WriteLine(x);
+//     }
+//     else Console.WriteLine("третьей цифры нет");  
 // }
-// Console.WriteLine("Введите трехзначное число");
-// int x = int.Parse(Console.ReadLine());
+
+// Console.WriteLine("Введите число");
+// int x = Math.Abs(int.Parse(Console.ReadLine()));
 
 // ThirdDigit(x);
 
