@@ -41,3 +41,28 @@
 
 // 
 
+// *любое число с консоли вывести без второй цифры на экран
+
+void DelSecondDigit(int x)
+{
+    int count = 1; //для счета десятков
+    int x1 = x;
+    if (Math.Abs(x) > 9) //если число меньше 2 знаков
+    {
+        if  (Math.Abs(x) < 100) Console.WriteLine($"{Math.Abs(x /10)}"); //в числе всего 2 знака
+        else
+        {
+            while (Math.Abs(x1) / 10 > 0)
+        {
+            x1 = x1 / 10;
+            count *= 10;
+        }
+        Console.WriteLine($"{x1}{Math.Abs(x % (count/10))}");
+        }
+        }
+    else Console.WriteLine($"В данном числе {x} всего одна цифра. Задача не выполнима");  
+}
+
+Console.WriteLine("Введите число");
+int x = int.Parse(Console.ReadLine());
+DelSecondDigit(x);
