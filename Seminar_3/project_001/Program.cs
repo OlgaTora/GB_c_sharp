@@ -59,3 +59,28 @@ int [] result = GetSquareNumbers(number);
 for (int i = 0; i < number; i++){
     Console.WriteLine(result[i]);
 }
+
+// Задача 21
+// Напишите программу, которая принимает на вход координаты двух точек и
+//находит расстояние между ними в 3D пространстве.
+// A (3,6,8); B (2,1,-7), -> 15.84 // A (7,-5, 0); B (1,-1,9) -> 11.53
+// попытка решить дз через список, но только для положительных коорд работает
+
+double GetDistance3D(char [] A, List B)
+{
+    double distance = Math.Sqrt(Math.Pow(A[0] - B[0], 2) + Math.Pow(A[1] - B[1], 2) + Math.Pow(A[2] - B[2], 2));
+    return distance;
+}
+
+Console.WriteLine("Input A: ");
+string coords1 = Console.ReadLine();
+char [] A = coords1.ToCharArray();
+
+
+Console.WriteLine("Input B: ");
+string coords2 = Console.ReadLine();
+//List B = new List<int>();
+char [] B = coords2.ToArray();
+
+double result = GetDistance3D(A, B);
+Console.WriteLine(Math.Round(result, 2, MidpointRounding.AwayFromZero));

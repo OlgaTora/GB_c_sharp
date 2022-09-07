@@ -16,8 +16,8 @@ string CheckPalindrome(int x)
 Console.WriteLine("Введите пятизначное число: ");
 int x = Math.Abs(int.Parse(Console.ReadLine()));
 
-// string result = CheckPalindrome(x);
-// Console.WriteLine(result);
+string result = CheckPalindrome(x);
+Console.WriteLine(result);
 
 // Задача 21
 // Напишите программу, которая принимает на вход координаты двух точек и
@@ -30,6 +30,7 @@ int x = Math.Abs(int.Parse(Console.ReadLine()));
 //     return distance;
 // }
 
+// // хотелось сделать через списки, но получилось только через char, а там не использовать отриц числа
 // Console.WriteLine("Input x1: ");
 // int x1 = int.Parse(Console.ReadLine());
 
@@ -51,36 +52,14 @@ int x = Math.Abs(int.Parse(Console.ReadLine()));
 // double result = GetDistance3D(x1, x2, y1, y2, z1, z2);
 // Console.WriteLine(Math.Round(result, 2, MidpointRounding.AwayFromZero));
 
-double GetDistance3D(char [] A, char [] B)
-{
-    double distance = Math.Sqrt(Math.Pow(A[0] - B[0], 2) + Math.Pow(A[1] - B[1], 2) + Math.Pow(A[2] - B[2], 2));
-    return distance;
-}
-
-Console.WriteLine("Input A: ");
-string coords1 = Console.ReadLine();
-char [] A = coords1. ToCharArray();
-
-
-Console.WriteLine("Input B: ");
-char [] B = (Console.ReadLine().ToCharArray());
-// char [] B = coords2.ToCharArray();
-Console.WriteLine(B[1]);
-var C = new list<int>();
-
-
-double result = GetDistance3D(A, B);
-Console.WriteLine(Math.Round(result, 2, MidpointRounding.AwayFromZero));
-
 // Задача 23
 // Напишите программу, которая принимает на вход число (N) и выдаёт таблицу кубов чисел от 1 до N.
 // 3 -> 1, 8, 27  5 -> 1, 8, 27, 64, 125
 
-
 // int [] GetCubeNumbers(int number)
 // {
 //     int [] cubeNumbers = new int [number];
-// // fill array
+//     // fill array
 //     for (int i = 1; i <= number; i++)
 //         {
 //             cubeNumbers[i - 1] = Convert.ToInt32(Math.Pow(i, 3));
@@ -88,8 +67,12 @@ Console.WriteLine(Math.Round(result, 2, MidpointRounding.AwayFromZero));
 //     return cubeNumbers;
 // }
 
-// Console.WriteLine("Введите число: ");
+// Console.WriteLine("Введите целое положительное число: ");
 // int number = int.Parse(Console.ReadLine());
-
+// // в случае неверного ввода числа
+// if (number < 1) Console.WriteLine ($"Введенное число {number} отрицательное или ноль");
+// else
+// {
 // int [] result = GetCubeNumbers(number);
 // Console.WriteLine(string.Join(", ", result));
+// }
