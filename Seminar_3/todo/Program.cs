@@ -30,7 +30,7 @@ Console.WriteLine(result);
 //     return distance;
 // }
 
-// // хотелось сделать через списки, но получилось только через char, а там не использовать отриц числа
+// // Хотелось сделать через списки, но получилось только через char, а там не использовать отриц числа.
 // Console.WriteLine("Input x1: ");
 // int x1 = int.Parse(Console.ReadLine());
 
@@ -59,7 +59,7 @@ Console.WriteLine(result);
 // int [] GetCubeNumbers(int number)
 // {
 //     int [] cubeNumbers = new int [number];
-//     // fill array
+//     // Fill array.
 //     for (int i = 1; i <= number; i++)
 //         {
 //             cubeNumbers[i - 1] = Convert.ToInt32(Math.Pow(i, 3));
