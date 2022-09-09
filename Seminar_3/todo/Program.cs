@@ -14,7 +14,7 @@ string CheckPalindrome(int x)
 }
 
 Console.WriteLine("Введите пятизначное число: ");
-int x = Math.Abs(int.Parse(Console.ReadLine()));
+int x = int.Parse(Console.ReadLine());
 
 string result = CheckPalindrome(x);
 Console.WriteLine(result);
