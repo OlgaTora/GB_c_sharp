@@ -1,23 +1,59 @@
 ﻿// ToDo 
-Задача 25: Напишите цикл, который принимает на вход два числа (A и B) и возводит число A в натуральную степень B.
+// Задача 25: Напишите цикл, который принимает на вход два числа (A и B) и возводит число A в натуральную степень B.
+// 3, 5 -> 243 (3⁵); 2, 4 -> 16
+// Для отрицательных считается также как и для положительных чисел.
 
-3, 5 -> 243 (3⁵)
+// int GetExponent(int a, int b)
+// {
+//     int result = Convert.ToInt32(Math.Pow(a, b));
+//     return result;
 
-2, 4 -> 16
+// }
 
-Задача 27: Напишите программу, которая принимает на вход число и выдаёт сумму цифр в числе.
+// try
+// {
+//     Console.Write("Input A: ");
+//     int a = int.Parse(Console.ReadLine());
+//     Console.Write("Input B: ");
+//     int b = int.Parse(Console.ReadLine());
 
-452 -> 11
+//     int exsponent = GetExponent(a, b);
+//     Console.WriteLine(exsponent);
+// }
+// catch (Exception ex)
+// {
+//     Console.WriteLine("Error! You have to input number!");
+//}
 
-82 -> 10
+// Задача 27: Напишите программу, которая принимает на вход число и выдаёт сумму цифр в числе.
+// 452 -> 11; 82 -> 10; 9012 -> 12
 
-9012 -> 12
 
-Задача 29: Напишите программу, которая задаёт массив из 8 элементов и выводит их на экран.
+int GetExponent(int a, int b)
+{
+    int result = Convert.ToInt32(Math.Pow(a, b));
+    return result;
 
-1, 2, 5, 7, 19 -> [1, 2, 5, 7, 19]
+}
 
-6, 1, 33 -> [6, 1, 33]
+try
+{
+    Console.Write("Input A: ");
+    int a = int.Parse(Console.ReadLine());
+    Console.Write("Input B: ");
+    int b = int.Parse(Console.ReadLine());
+
+    int exsponent = GetExponent(a, b);
+    Console.WriteLine(exsponent);
+}
+catch (Exception ex)
+{
+    Console.WriteLine("Error! You have to input number!");
+
+//Задача 29: Напишите программу, которая задаёт массив из 8 элементов и выводит их на экран.
+// 1, 2, 5, 7, 19 -> [1, 2, 5, 7, 19]; 6, 1, 33 -> [6, 1, 33]
+
+
 
 // Task 24 Напишите программу, которая принимает на вход число А и выдает сумму от 1 до А
 
