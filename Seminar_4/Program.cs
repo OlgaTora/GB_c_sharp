@@ -18,7 +18,7 @@
 //     int b = int.Parse(Console.ReadLine());
 
 //     int exsponent = GetExponent(a, b);
-//     Console.WriteLine(exsponent);
+//     Console.WriteLine($"Число {a} в натуральной степени {b} = {exsponent}");
 // }
 // catch (Exception ex)
 // {
@@ -29,29 +29,57 @@
 // 452 -> 11; 82 -> 10; 9012 -> 12
 
 
-int GetExponent(int a, int b)
-{
-    int result = Convert.ToInt32(Math.Pow(a, b));
-    return result;
+// int GetSum(int number)
+// {
+//     int sum = 0;
+//     while (number > 0)
+//     {
+//         sum += number % 10;
+//         number /= 10;
+//     }
+//     return sum;
+// }
 
+// try
+// {
+//     Console.Write("Input number: ");
+//     int number = Math.Abs(int.Parse(Console.ReadLine()));
+
+//     int sum = GetSum(number);
+//     Console.WriteLine($"Сумма цифр в числе = {sum}");
+// }
+// catch (Exception ex)
+// {
+//     Console.WriteLine("Error! You have to input number!");
+// }
+
+//Задача 29: Напишите программу, которая задаёт массив из 8 элементов и выводит их на экран.
+// 1, 2, 5, 7, 19 -> [1, 2, 5, 7, 19]; 6, 1, 33 -> [6, 1, 33]
+
+
+int GetSum(int number)
+{
+    int sum = 0;
+    while (number > 0)
+    {
+        sum += number % 10;
+        number /= 10;
+    }
+    return sum;
 }
 
 try
 {
-    Console.Write("Input A: ");
-    int a = int.Parse(Console.ReadLine());
-    Console.Write("Input B: ");
-    int b = int.Parse(Console.ReadLine());
+    Console.Write("Input number: ");
+    int number = Math.Abs(int.Parse(Console.ReadLine()));
 
-    int exsponent = GetExponent(a, b);
-    Console.WriteLine(exsponent);
+    int sum = GetSum(number);
+    Console.WriteLine($"Сумма цифр в числе = {sum}");
 }
 catch (Exception ex)
 {
     Console.WriteLine("Error! You have to input number!");
-
-//Задача 29: Напишите программу, которая задаёт массив из 8 элементов и выводит их на экран.
-// 1, 2, 5, 7, 19 -> [1, 2, 5, 7, 19]; 6, 1, 33 -> [6, 1, 33]
+}
 
 
 
