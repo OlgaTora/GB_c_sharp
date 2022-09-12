@@ -3,27 +3,27 @@
 // 3, 5 -> 243 (3⁵); 2, 4 -> 16
 // Для отрицательных считается также как и для положительных чисел.
 
-// int GetExponent(int a, int b)
-// {
-//     int result = Convert.ToInt32(Math.Pow(a, b));
-//     return result;
+int GetExponent(int a, int b)
+{
+    int result = Convert.ToInt32(Math.Pow(a, b));
+    return result;
 
-// }
+}
 
-// try
-// {
-//     Console.Write("Input A: ");
-//     int a = int.Parse(Console.ReadLine());
-//     Console.Write("Input B: ");
-//     int b = int.Parse(Console.ReadLine());
+try
+{
+    Console.Write("Input A: ");
+    int a = int.Parse(Console.ReadLine());
+    Console.Write("Input B: ");
+    int b = int.Parse(Console.ReadLine());
 
-//     int exsponent = GetExponent(a, b);
-//     Console.WriteLine($"Число {a} в натуральной степени {b} = {exsponent}");
-// }
-// catch (Exception ex)
-// {
-//     Console.WriteLine("Error! You have to input number!");
-//}
+    int exsponent = GetExponent(a, b);
+    Console.WriteLine($"Число {a} в натуральной степени {b} = {exsponent}");
+}
+catch (Exception ex)
+{
+    Console.WriteLine("Error! You have to input number!");
+}
 
 // Задача 27: Напишите программу, которая принимает на вход число и выдаёт сумму цифр в числе.
 // 452 -> 11; 82 -> 10; 9012 -> 12
@@ -54,36 +54,53 @@
 // }
 
 //Задача 29: Напишите программу, которая задаёт массив из 8 элементов и выводит их на экран.
+// Элементы вводятся пользователем.
 // 1, 2, 5, 7, 19 -> [1, 2, 5, 7, 19]; 6, 1, 33 -> [6, 1, 33]
 
+// Вариант с любым количеством цифр и вводом цифр построчно.
 
-int GetSum(int number)
-{
-    int sum = 0;
-    while (number > 0)
-    {
-        sum += number % 10;
-        number /= 10;
-    }
-    return sum;
-}
+// int[] GetArray(int number)
+// {
+//     int[] my_array = new int[number];
+//     for (int i = 0; i < number; i++)
+//     {
+//         Console.Write("Input list number: ");
+//         my_array[i] = int.Parse(Console.ReadLine());
+//     }
+//     return my_array;
+// }
 
-try
-{
-    Console.Write("Input number: ");
-    int number = Math.Abs(int.Parse(Console.ReadLine()));
+// Console.Write("Input length of list: ");
+// try
+// {
+//     int number = int.Parse(Console.ReadLine());
+//     int[] array = GetArray(number);
+//     Console.WriteLine($"Your list is: [{string.Join(", ", array)}]");
+// }
+// catch (Exception ex)
+// {
+//     Console.WriteLine("Error! You have to input list of numbers!");
+// }
 
-    int sum = GetSum(number);
-    Console.WriteLine($"Сумма цифр в числе = {sum}");
-}
-catch (Exception ex)
-{
-    Console.WriteLine("Error! You have to input number!");
-}
+// Вариант с вводом цифр, как в задании, но без использования метода.
 
+// try
+// {
+//     Console.Write("Input list: 8 numbers: ");
+//     int [] my_array = (Console.ReadLine().Split(", ").Select(e => Convert.ToInt32(e)).ToArray());
+//     if (my_array.Length == 8)
+//     {
+//         Console.WriteLine($"Your list is: [{string.Join(", ", my_array)}]");
+//     }
+//     else Console.WriteLine("You have to inpup 8 numbers!");
+// }
+// catch (Exception ex)
+// {
+//     Console.WriteLine("Error! You have to input list of numbers separated by commas!");
+// }
 
-
-// Task 24 Напишите программу, которая принимает на вход число А и выдает сумму от 1 до А
+// Задачи на самом семинаре.
+// Task 24 Напишите программу, которая принимает на вход число А и выдает сумму от 1 до А.
 
 // int GetSum(int number)
 // {
