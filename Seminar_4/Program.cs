@@ -7,7 +7,6 @@ int GetExponent(int a, int b)
 {
     int result = Convert.ToInt32(Math.Pow(a, b));
     return result;
-
 }
 
 try
