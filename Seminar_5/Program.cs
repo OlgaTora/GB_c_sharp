@@ -2,6 +2,40 @@
 // Напишите программу, которая покажет количество чётных чисел в массиве.
 // [345, 897, 568, 234] -> 2
 
+// int [] GetFilledArray(int size, int startValue, int endValue)
+// {
+//     var my_array = new int [size];
+//     // создаем объект, который имеет тип рандом
+//     var random = new Random();
+//     for (int i = 0; i < my_array.Length; i++)
+//     {
+//     my_array[i] = random.Next(startValue, endValue + 1);
+//     }
+//     return my_array;
+// }
+
+// int CountPositiveNumbers(int [] my_array)
+// {
+//     int count = 0;
+//     for (int i = 0; i < my_array.Length; i++)
+//     {
+//         if (my_array[i] % 2 == 0)
+//         {
+//             count ++;
+//         }
+//     }
+//     return count;
+// }
+// var my_array = GetFilledArray(12, 100, 1000);
+// //  Для примера беру size = 12
+// Console.WriteLine($"Random list is: [{string.Join(", ", my_array)}]");
+// int count = CountPositiveNumbers(my_array);
+// Console.WriteLine($"There are {count} positive numbers in random list");
+
+//Задача 36: Задайте одномерный массив, заполненный случайными числами.
+// Найдите сумму элементов, стоящих на нечётных позициях.
+// [3, 7, 23, 12] -> 19 ; [-4, -6, 89, 6] -> 0
+
 int [] GetFilledArray(int size, int startValue, int endValue)
 {
     var my_array = new int [size];
@@ -14,13 +48,23 @@ int [] GetFilledArray(int size, int startValue, int endValue)
     return my_array;
 }
 
+int CountPositiveNumbers(int [] my_array)
+{
+    int count = 0;
+    for (int i = 0; i < my_array.Length; i++)
+    {
+        if (my_array[i] % 2 == 0)
+        {
+            count ++;
+        }
+    }
+    return count;
+}
 var my_array = GetFilledArray(12, 100, 1000);
-PrintArray(my_array);
-
-
-//Задача 36: Задайте одномерный массив, заполненный случайными числами.
-// Найдите сумму элементов, стоящих на нечётных позициях.
-// [3, 7, 23, 12] -> 19 ; [-4, -6, 89, 6] -> 0
+//  Для примера беру size = 12
+Console.WriteLine($"Random list is: [{string.Join(", ", my_array)}]");
+int count = CountPositiveNumbers(my_array);
+Console.WriteLine($"There are {count} positive numbers in random list");
 
 //Задача 37: Найдите произведение пар чисел в одномерном массиве.
 //Парой считаем первый и последний элемент, второй и предпоследний и т.д. Результат запишите в новом массиве.
