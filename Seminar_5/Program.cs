@@ -143,44 +143,57 @@
 // Задача 38: Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
 //[3 7 22 2 78] -> 76
 
-double [] GetFilledArray(int size,double startValue, double endValue)
-{
-    var my_array = new double [size];
-    var random = new Random();
-    for (int i = 0; i < my_array.Length; i++)
-    {
-    my_array[i] = random.Next(startValue, endValue + 1);
-    }
-    return my_array;
-}
+// double [] GetFilledArray(int size,double startValue, double endValue)
+// {
+//     var myArray = new double [size];
+//     var random = new Random();
+//     for (int i = 0; i < myArray.Length; i++)
+//     {
+//     myArray[i] = Math.Round(random.NextDouble() * (endValue + 1 - startValue) + startValue, 2, 
+//                 MidpointRounding.AwayFromZero);
+//     // Округлим до 2х знаков после запятой
+//     }
+//     return myArray;
+// }
 
 
-double SearchMax(double [] my_array)
-{
-    for (int i = 1; i < my_array.Length; i++)
-    {
-        double max = my_array[0];
-        if (max < my_array[i]) max = my_array[i];
-    }
-return max;
-}
+// double SearchMax(double [] myArray)
+// {
+//     double max = myArray[0];
+//     for (int i = 1; i < myArray.Length; i++)
+//     {
+//         if (max < myArray[i]) max = myArray[i];
+//     }
+// return max;
+// }
 
 
-int GetRandomSize ()
-{
-    var random = new Random();
-    int size = random.Next(2, 20);
-    // Прописываю рандомный размер массива.
-    return size;
-}
+// double SearchMin(double [] myArray)
+// {
+//     double min = myArray[0];
+//     for (int i = 1; i < myArray.Length; i++)
+//     {
+//         if (min > myArray[i]) min = myArray[i];
+//     }
+// return min;
+// }
 
-int size = GetRandomSize();
-var my_array = GetFilledArray(size, -100, 100);
-// Для примера используются числа в данном диапазоне
-Console.WriteLine($"Random list is: [{string.Join(", ", my_array)}]");
-double max = SearchMax(my_array);
-double min = SearchMin(my_array);
-Console.WriteLine($"Maximum of list = {max}, minimum = {min}");
+
+// int GetRandomSize ()
+// {
+//     var random = new Random();
+//     int size = random.Next(2, 20);
+//     // Прописываю рандомный размер массива.
+//     return size;
+// }
+
+// int size = GetRandomSize();
+// var myArray = GetFilledArray(size, -100, 100);
+// // Для примера используются числа в данном диапазоне
+// Console.WriteLine($"Random list is: [{string.Join(", ", myArray)}]");
+// double max = SearchMax(myArray);
+// double min = SearchMin(myArray);
+// Console.WriteLine($"Subtract of maxinum ({max}) and minimum ({min}) = {max - min}");
 
 // Task 31 Задайте массив  из 12 элементов, заполненный случайными числами от -9 до 9. Найдите сумму + и - чисел
 
