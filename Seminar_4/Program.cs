@@ -58,28 +58,40 @@ catch (Exception ex)
 
 // Вариант с любым количеством цифр и вводом цифр построчно.
 
-// int[] GetArray(int number)
-// {
-//     int[] my_array = new int[number];
-//     for (int i = 0; i < number; i++)
-//     {
-//         Console.Write("Input list number: ");
-//         my_array[i] = int.Parse(Console.ReadLine());
-//     }
-//     return my_array;
-// }
+int[] GetArray(int number)
+{
+     int[] my_array = new int[number];
+     for (int i = 0; i < number; i++)
+     {
+         Console.Write("Input list number: ");
+         my_array[i] = int.Parse(Console.ReadLine());
+     }
+     return my_array;
+}
 
-// Console.Write("Input length of list: ");
-// try
-// {
-//     int number = int.Parse(Console.ReadLine());
-//     int[] array = GetArray(number);
-//     Console.WriteLine($"Your list is: [{string.Join(", ", array)}]");
-// }
-// catch (Exception ex)
-// {
-//     Console.WriteLine("Error! You have to input list of numbers!");
-// }
+Console.Write("Input length of list: ");
+
+int [] ChangeArray (int [] array
+{
+    var newArray = new int [];
+    for (int i = 0; i < array.Length; i++)
+    {
+        newArray[i] = array[i] * -1;
+    }
+return newArray
+) 
+try
+ {
+     int number = int.Parse(Console.ReadLine());
+     int[] array = GetArray(number);
+     int[] newArray = ChangeArray(array);
+     Console.WriteLine($"Your list is: [{string.Join(", ", array)}]");
+Console.WriteLine($"Your list is: [{string.Join(", ", array)}]");
+}
+ catch (Exception ex)
+ {
+     Console.WriteLine("Error! You have to input list of numbers!");
+ }
 
 // Вариант с вводом цифр, как в задании, но без использования метода.
 
