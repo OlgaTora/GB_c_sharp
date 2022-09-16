@@ -97,5 +97,69 @@
 // int size = GetRandomSize();
 // var myArray = GetFilledArray(size);
 // Console.WriteLine($"First list is: [{string.Join(", ", myArray)}]");
-// var myReverseArray = GetReverseArray(myArray);
-// Console.WriteLine($"Reversed list is: [{string.Join(", ", myReverseArray)}]");
+// int [] result = GetReverseArray(myArray);
+// Console.WriteLine($"Reversed list is: [{string.Join(", ", result)}]");
+
+// Фибоначи без рекурсии.
+
+// int Fib (int number)
+// {
+//     int fib1 = 1;
+//     int fib2 = 1;
+//     int fib = 0;
+//     for(int i = 2; i < number; i++)
+//         {
+//         fib = fib1 + fib2;
+//         fib1 = fib2;
+//         fib2 = fib;
+//         }
+//     return fib;
+// }
+
+// Console.WriteLine(Fib(7));
+
+// Task 40 Три числа, может ли существовать треугольник через true false
+
+bool Triangle(int a, int b, int c)
+{
+    bool flag = false;
+    if (a < (b + c) & b < (a + c) % c < (a + b))
+    {
+        flag = true;
+    }
+    return flag;
+}
+
+Console.WriteLine("Input A: ");
+int a = int.Parse(Console.ReadLine());
+Console.WriteLine("Input B: ");
+int b = int.Parse(Console.ReadLine());
+Console.WriteLine("Input C: ");
+int c = int.Parse(Console.ReadLine());
+bool flag = Triangle(a, b, c);
+
+
+// Task 41 Перевод из десятичного в двоичное
+
+// string GetBinary(int number)
+// {
+//     string result = "";
+//     while (number != 0)
+//     {
+//         result += Convert.ToString(number % 2);
+//         number = number / 2;
+//     }
+//     return result;
+// }
+// void PrintString(string result)
+// {
+//     for(int i = 0; i < result.Length; i++)
+//     {
+//         Console.Write(result[result.Length - 1 - i]);
+//     }
+// }
+
+// Console.WriteLine("Input number: ");
+// int number = int.Parse(Console.ReadLine());
+// string result = GetBinary(number);
+// PrintString(result);
