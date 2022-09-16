@@ -120,30 +120,32 @@
 
 // Task 40 Три числа, может ли существовать треугольник через true false
 
-bool Triangle(int a, int b, int c)
-{
-    bool flag = false;
-    if (a < (b + c) & b < (a + c) % c < (a + b))
-    {
-        flag = true;
-    }
-    return flag;
-}
-
-Console.WriteLine("Input A: ");
-int a = int.Parse(Console.ReadLine());
-Console.WriteLine("Input B: ");
-int b = int.Parse(Console.ReadLine());
-Console.WriteLine("Input C: ");
-int c = int.Parse(Console.ReadLine());
-bool flag = Triangle(a, b, c);
+// bool Triangle(int a, int b, int c)
+// {
+//     if (a < (b + c) && b < (a + c) && c < (a + b)) return true;
+//     else return false;
+// }
+// try
+// {
+//     Console.WriteLine("Input A: ");
+//     int a = int.Parse(Console.ReadLine());
+//     Console.WriteLine("Input B: ");
+//     int b = int.Parse(Console.ReadLine());
+//     Console.WriteLine("Input C: ");
+//     int c = int.Parse(Console.ReadLine());
+//     Console.WriteLine(Triangle(a, b, c));
+// }
+//  catch (Exception ex)
+//  {
+//      Console.WriteLine("Error! You have to input numbers!");
+//  }
 
 
 // Task 41 Перевод из десятичного в двоичное
 
 // string GetBinary(int number)
 // {
-//     string result = "";
+//     string result = String.Empty;
 //     while (number != 0)
 //     {
 //         result += Convert.ToString(number % 2);
@@ -163,3 +165,6 @@ bool flag = Triangle(a, b, c);
 // int number = int.Parse(Console.ReadLine());
 // string result = GetBinary(number);
 // PrintString(result);
+
+// еще вариант
+//// result = ReverseString(result)
