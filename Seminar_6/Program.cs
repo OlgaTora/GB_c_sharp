@@ -1,29 +1,29 @@
 ﻿// Задача 41: Пользователь вводит с клавиатуры M чисел. Посчитайте, сколько чисел больше 0 ввёл пользователь.
 // 0, 7, 8, -2, -2 -> 2 // 1, -7, 567, 89, 223-> 3
 
-// int CompareNumbers(int [] myArray)
-// {
-//     int count = 0;
-//     for (int i = 0; i < myArray.Length; i++)
-//     {
-//         if (myArray[i] > 0 ) count ++;
-//     }
-//     return count;
-// }
+int CompareNumbers(int [] myArray)
+{
+    int count = 0;
+    for (int i = 0; i < myArray.Length; i++)
+    {
+        if (myArray[i] > 0 ) count ++;
+    }
+    return count;
+}
 
-// try
-// {
-//     Console.Write("Input your numbers: ");
-//     int [] myArray = (Console.ReadLine().Split(", ").Select(e => Convert.ToInt32(e)).ToArray());
-//     Console.WriteLine($"You've input: {string.Join(", ", myArray)}");
-//     int count = CompareNumbers(myArray);
-//     Console.WriteLine($"There are {count} numbers above 0 in your list");
+try
+{
+    Console.Write("Input your numbers: ");
+    int [] myArray = (Console.ReadLine().Split(", ").Select(e => Convert.ToInt32(e)).ToArray());
+    Console.WriteLine($"You've input: {string.Join(", ", myArray)}");
+    int count = CompareNumbers(myArray);
+    Console.WriteLine($"There are {count} numbers above 0 in your list");
     
-// }
-// catch (Exception ex)
-// {
-//     Console.WriteLine("Error! You have to input list of numbers/number separated by commas!");
-// }
+}
+catch (Exception ex)
+{
+    Console.WriteLine("Error! You have to input list of numbers/number separated by commas!");
+}
 
 
 // Задача 43: Напишите программу, которая найдёт точку пересечения двух прямых,
