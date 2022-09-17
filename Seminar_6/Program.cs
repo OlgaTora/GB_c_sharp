@@ -29,31 +29,68 @@
 // Задача 43: Напишите программу, которая найдёт точку пересечения двух прямых,
 // заданных уравнениями y = k1 * x + b1, y = k2 * x + b2; значения b1, k1, b2 и k2 задаются пользователем.
 // b1 = 2, k1 = 5, b2 = 4, k2 = 9 -> (-0,5; -0,5)
+// Вариант без массива для вводимых координат
 
-// int [,] SearchPoint (b1, k1, b2, k2)
+// double [] SearchCrossPoint (double b1, double k1, double b2, double k2)
 // {
-//     y1 = k1 * x + b1;
-//     y2 = k2 * x + b2:
-//     while y1 != y2
-//     {
-
-//     }
-
-//     return
+//     double [] crossPoint = new double [2];
+//     crossPoint[0] = (b2 - b1) / (k1 - k2);
+//     Console.WriteLine(crossPoint[0]);
+//     crossPoint[1] = k1 * crossPoint[0] + b1;
+//     return crossPoint;
 // }
 
 // try
 // {
 //     Console.Write("Input b1: ");
+//     double b1 = Convert.ToDouble(Console.ReadLine());
 //     Console.Write("Input k1: ");
+//     double k1 = Convert.ToDouble(Console.ReadLine());
 //     Console.Write("Input b2: ");
+//     double b2 = Convert.ToDouble(Console.ReadLine());
 //     Console.Write("Input k2: ");
+//     double k2 = Convert.ToDouble(Console.ReadLine());
 
-// //     int [] myArray = (Console.ReadLine().Split(", ").Select(e => Convert.ToInt32(e)).ToArray());
-// //     
-//     int [,] point = SearchPoint(b1, k1, b2, k2);
-//     Console.WriteLine($"The point is {point}");
-    
+//     if (k1 == k2) Console.WriteLine("This lines dont have crossing point");
+//     else
+//     {
+//         double [] point = SearchCrossPoint(b1, k1, b2, k2);
+//         // Округление координат до 4 знаков
+//         point[0] = Math.Round(point[0], 4, MidpointRounding.AwayFromZero);
+//         point[1] = Math.Round(point[0], 4, MidpointRounding.AwayFromZero);
+//         Console.WriteLine($"The crossing point is [{string.Join("; ", point)}]");
+//     }
+// }
+// catch (Exception ex)
+// {
+//     Console.WriteLine("Error! You have to input four numbers!");
+// }
+
+// Вариант с массивом для вводимых координат
+
+// double [] SearchCrossPoint (double [] coordsA, double [] coordsB)
+// {
+//     double [] crossPoint = new double [2];
+//     crossPoint[0] = (coordsB[0] - coordsA[0]) / (coordsA[1] - coordsB[1]);
+//     crossPoint[1] = coordsA[1] * crossPoint[0] + coordsA[0];
+//     return crossPoint;
+// }
+
+// try
+// {
+//     Console.Write("Input coordinates x and y for point A: ");
+//     double [] coordsA = (Console.ReadLine().Split(", ").Select(e => Convert.ToDouble(e)).ToArray());;
+//     Console.Write("Input coordinates x and y for point B: ");
+//     double [] coordsB = (Console.ReadLine().Split(", ").Select(e => Convert.ToDouble(e)).ToArray());;
+//     if (coordsA[1] == coordsB[1]) Console.WriteLine("This lines dont have crossing point");
+//     else
+//     {
+//         double [] point = SearchCrossPoint(coordsA, coordsB);
+//         // Округление коррдинат до 4 знаков
+//         point[0] = Math.Round(point[0], 4, MidpointRounding.AwayFromZero);
+//         point[1] = Math.Round(point[0], 4, MidpointRounding.AwayFromZero);
+//         Console.WriteLine($"The crossing point is {string.Join(", ", point)}");
+//     }
 // }
 // catch (Exception ex)
 // {
