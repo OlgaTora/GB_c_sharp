@@ -100,23 +100,42 @@
 // int [] result = GetReverseArray(myArray);
 // Console.WriteLine($"Reversed list is: [{string.Join(", ", result)}]");
 
-// Фибоначи без рекурсии.
+// Task 46 Создать копию массива, копируя поэлементно.
 
-// int Fib (int number)
+
+// Task 44 Фибоначи без рекурсии. Вовод всех чисел до N.
+//Надо заполнить массив 0 и 1 
+
+// int [] Fib (int number)
 // {
-//     int fib1 = 1;
-//     int fib2 = 1;
-//     int fib = 0;
-//     for(int i = 2; i < number; i++)
-//         {
-//         fib = fib1 + fib2;
-//         fib1 = fib2;
-//         fib2 = fib;
-//         }
-//     return fib;
+//     int [] myArray = new int [number];
+//     myArray[0] = 0;
+//     if (number == 1) return myArray;
+//     else
+//     {
+//         myArray[1] = 1;
+        
+//         for(int i = 2; i < number; i++)
+//             {
+//             myArray[i] = myArray[i - 1] + myArray [i -2 ];
+//             }
+//     }
+//     return myArray;
 // }
 
-// Console.WriteLine(Fib(7));
+// try
+// {
+//     Console.Write("Input number of Fibonacci: ");
+//     int number = int.Parse(Console.ReadLine());
+
+//     var myArray = Fib(number);
+//     Console.WriteLine($"Fibonacci list is: {string.Join(" ", myArray)}");
+// }
+
+// catch (Exception ex)
+// {
+//     Console.WriteLine("Error! You have to input one number above zero!");
+// }
 
 // Task 40 Три числа, может ли существовать треугольник через true false
 
