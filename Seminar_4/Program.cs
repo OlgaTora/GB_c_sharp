@@ -82,11 +82,11 @@ return newArray
 ) 
 try
  {
-     int number = int.Parse(Console.ReadLine());
-     int[] array = GetArray(number);
-     int[] newArray = ChangeArray(array);
-     Console.WriteLine($"Your list is: [{string.Join(", ", array)}]");
-Console.WriteLine($"Your list is: [{string.Join(", ", array)}]");
+    int number = int.Parse(Console.ReadLine());
+    int[] array = GetArray(number);
+    int[] newArray = ChangeArray(array);
+    Console.WriteLine($"Your list is: [{string.Join(", ", array)}]");
+    Console.WriteLine($"Your list is: [{string.Join(", ", array)}]");
 }
  catch (Exception ex)
  {
