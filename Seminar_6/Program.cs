@@ -100,7 +100,32 @@
 // int [] result = GetReverseArray(myArray);
 // Console.WriteLine($"Reversed list is: [{string.Join(", ", result)}]");
 
-// Task 46 Создать копию массива, копируя поэлементно.
+// Task 46 Создать копию вводимого массива, копируя поэлементно.
+
+// int [] CopyArray (int [] myArray)
+// {
+//     int [] newArray = new int [myArray.Length];
+
+//     for(int i = 0; i < newArray.Length; i++)
+//     {
+//         newArray[i] = myArray[i];
+//     }
+//     return newArray;
+// }
+
+// try
+// {
+//     Console.WriteLine("Input you list with space: ");
+//     int [] myArray = (Console.ReadLine().Split(" ").Select(e => Convert.ToInt32(e)).ToArray());
+//     Console.WriteLine($"Your list is: {string.Join(" ", myArray)}");
+
+//     var result = CopyArray(myArray);
+//     Console.WriteLine($"Copied list is: {string.Join(" ", result)}");
+// }
+// catch (Exception ex)
+// {
+//     Console.WriteLine("Error! You have to input list of numbers with space!");
+// }
 
 
 // Task 44 Фибоначи без рекурсии. Вовод всех чисел до N.
