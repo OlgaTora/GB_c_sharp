@@ -103,7 +103,6 @@
 //     {
 //         newArray[i] = myArray[i];
 //     }
-
 //     for(int i = indexToDelete+ 1; i < newArray.Length; i++)
 //     {
 //         newArray[i] = myArray[i];
