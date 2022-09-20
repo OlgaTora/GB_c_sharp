@@ -27,10 +27,10 @@
 // GetFilledTwoDemArray(sizeN, sizeM, -100, 100);
 
 
-// Task 50 Программа принимает позицию элемента и возвращает его значение иkи указание, что нет
+// Task 50 Программа принимает позицию элемента и возвращает его значение или указание, что нет
 // Элемент - целое число
 
-// int[,] GetFilledTwoDemArray(int sizeN, int sizeM, int startValue, int endValue)
+// int [,] GetFilledTwoDemArray(int sizeN, int sizeM)
 // {
 //     var myArray = new int [sizeN, sizeM];
 //     var random = new Random();
@@ -38,74 +38,93 @@
 //     {
 //         for (int j = 0; j < myArray.GetLength(1); j++)
 //         {
-//             myArray[i, j] = random.Next(startValue, endValue + 1);
+//             myArray[i, j] = random.Next(1, 100);
+//             Console.Write($"{myArray[i, j]} ");
 //         }
+//     Console.WriteLine("");
 //     }
 //     return myArray;
 // }
 
-// int SearchElementArray(int[,] myArray, int [] point)
+// void SearchElementArray(int[,] myArray, int [] point)
 // {
-//     for (int i = 0; i < myArray.GetLength(0); i++)
-//     {
-//         for (int j = 0; j < myArray.GetLength(1); j++)
-//             {
-//                 if (myArray[i, j] == point[]) return myArray[i, j];
-//             }
-//         }
-//         return 0;   
-//     }
-// }
-
-// Console.Write("Input number of row and column of element: ");
-// int [] point = Console.ReadLine().ToArray;
-// myArray = GetFilledTwoDemArray(2, 3, -10, 10);
-// int result = SearchElementArray(myArray, point);
-
-// Task 52 Найти среднее арифметическое  в каждом столбце
-// void PrintImage(int[,] image)
-// {
-//     for (int i = 0; i < image.GetLength(0); i++)
-//     {
-//         for (int j = 0; j < image.GetLength(1); j++)
+//     if (point[0] <= myArray.GetLength(0) &&
+//         point[1] <= myArray.GetLength(1))
 //         {
-//         if(image[i,j] == 0) Console.Write($" ");
-//         else Console.Write($"+");
-//         }
-//  Console.WriteLine();
-//  }
+//             int result = myArray[point[0], point[1]];
+//             Console.WriteLine($"Your element is: {result}");
+//         }    
+//     else Console.WriteLine("Your element is out of range!");
 // }
-
-// void FillImage(int row, int col)
-// {
-//     if (pic[row, col] == 0) 
-//     {
-//         pic[row, col] = 1;
-//         FillImage(row - 1, col);
-//         FillImage(row, col - 1);
-//         FillImage(row + 1, col);
-//         FillImage(row, col + 1);
-//     }
-// }
-
-// PrintImage(pic);
-// FillImage(13, 13);
-// PrintImage(pic);
 
 // try
 // {
-//     Console.Write("Input your numbers: ");
-//     int [] myArray = (Console.ReadLine().Split(", ").Select(e => Convert.ToInt32(e)).ToArray());
-//     Console.WriteLine($"You've input: {string.Join(", ", myArray)}");
-//     int count = CompareNumbers(myArray);
-//     Console.WriteLine($"There are {count} numbers above 0 in your list");
-    
+//     Console.Write("Input number of row and column of element: ");
+//     int [] point = (Console.ReadLine().Split(", ").Select(e => Convert.ToInt32(e)).ToArray());;
+//     var myArray = GetFilledTwoDemArray(5, 5);
+//     // Введем размер для примера
+
+//     SearchElementArray(myArray, point);    
 // }
 // catch (Exception ex)
 // {
-//     Console.WriteLine("Error! You have to input list of numbers/number separated by commas!");
+//     Console.WriteLine("Error! You've to input number of row and column separated by commas < 5!");
+//     // О том, что ввести надо числа меньше заданного массива
 // }
 
+
+// Task 52 Найти среднее арифметическое  в каждом столбце.
+// Элементы - целые числа
+// Для разнообразия размер массива тоже рандомный
+
+// int [,] GetFilledTwoDemArray(int sizeN, int sizeM)
+// {
+//     var myArray = new int [sizeN, sizeM];
+//     var random = new Random();
+//     for (int i = 0; i < myArray.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < myArray.GetLength(1); j++)
+//         {
+//             myArray[i, j] = random.Next(1, 10);
+//             Console.Write($"{myArray[i, j]} ");
+//         }
+//     Console.WriteLine("");
+//     }
+//     return myArray;
+// }
+
+// int GetRandomSize ()
+// // Задает случайный размер массива.
+// {
+//     var random = new Random();
+//     int size = random.Next(1, 6);
+//     // Прописываю ограниченный размер массива.
+//     return size;
+// }
+
+// double [] GetMean(int [,] myArray)
+// {
+//     double [] mean = new double [myArray.GetLength(1)];
+//     for (int j = 0; j < myArray.GetLength(1); j++)
+//     {
+//         double sum = 0;
+//         for (int i = 0; i < myArray.GetLength(0); i++)
+//         {
+//             sum += myArray[i, j];
+//         }
+//         mean[j] = sum / myArray.GetLength(1);
+//         mean[j] = Math.Round(mean[j], 4, MidpointRounding.AwayFromZero);
+//         // Округление до 4 знаков после запятой.
+//     }
+//     return mean;
+// }
+
+// int sizeN = GetRandomSize();
+// int sizeM = GetRandomSize();
+// var myArray = GetFilledTwoDemArray(sizeN, sizeN);
+
+// double [] result = GetMean(myArray);
+// Console.Write($"Means in random array columns are: [{string.Join("; ", result)}]");;
 
 // Task 46 Заполнить массив случайными целыми числами
 
@@ -264,64 +283,60 @@
 // PrintSquaredMyArray(myArray);
 
 
-// Task 50 Заменить числа в четных индексах на их квадраты
+// Task 50 Посчитать сумму элементов по диагонали
 
-int sizeN = 0;
-int sizeM = 0;
+// int sizeN = 0;
+// int sizeM = 0;
 
-int [,] GetFilledTwoDemArray(int sizeN, int sizeM)
-{
-    var myArray = new int [sizeN, sizeM];
-    var random = new Random();
-    for (int i = 0; i < myArray.GetLength(0); i++)
-    {
-        for (int j = 0; j < myArray.GetLength(1); j++)
-        {
-            myArray[i, j] = random.Next(1, 10);
-            Console.Write(myArray[i, j]);
-            Console.Write(" ");
-        }
-    Console.WriteLine("");
-    }
-    return myArray;
-}
+// int [,] GetFilledTwoDemArray(int sizeN, int sizeM)
+// {
+//     var myArray = new int [sizeN, sizeM];
+//     var random = new Random();
+//     for (int i = 0; i < myArray.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < myArray.GetLength(1); j++)
+//         {
+//             myArray[i, j] = random.Next(1, 10);
+//             Console.Write(myArray[i, j]);
+//             Console.Write(" ");
+//         }
+//     Console.WriteLine("");
+//     }
+//     return myArray;
+// }
 
-void PrintSquaredMyArray(int[,] myArray)
-{
-    for (int i = 0; i < myArray.GetLength(0); i++)
-    {
-        for (int j = 0; j < myArray.GetLength(1); j++)
-        {
-        if (i % 2 == 0 && j % 2 == 0)
-        {
-            myArray[i, j] *= myArray[i, j];
-        }
-        Console.Write(myArray[i, j]);
-        Console.Write(" ");
-        }
-    Console.WriteLine("");
-    }
-}
+// int GetSumDiagonal(int[,] myArray)
+// {
+//     int sum = 0;
+//     for (int i = 0; i < myArray.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < myArray.GetLength(1); j++)
+//         {
+//         if (i == j) sum += myArray[i, j];
+//         }
+//     }
+//     return sum;
+// }
 
-Console.Write("Input nimber of rows: ");
-bool parseNIsOk = int.TryParse(Console.ReadLine(), out int n);
-if (!parseNIsOk)
-{
-    Console.WriteLine("Error! You have to input number of rows and columns!");
-    return;
-}
-else sizeN = n;
+// Console.Write("Input nimber of rows: ");
+// bool parseNIsOk = int.TryParse(Console.ReadLine(), out int n);
+// if (!parseNIsOk)
+// {
+//     Console.WriteLine("Error! You have to input number of rows and columns!");
+//     return;
+// }
+// else sizeN = n;
 
-Console.Write("Input number of columns: ");
-bool parseMIsOk = int.TryParse(Console.ReadLine(), out int m);
-if (!parseMIsOk)
-{
-    Console.WriteLine("Error! You have to input number of rows and columns!");
-    return;
-}
-else sizeM = m;
+// Console.Write("Input number of columns: ");
+// bool parseMIsOk = int.TryParse(Console.ReadLine(), out int m);
+// if (!parseMIsOk)
+// {
+//     Console.WriteLine("Error! You have to input number of rows and columns!");
+//     return;
+// }
+// else sizeM = m;
 
-Console.WriteLine("Random array: ");
-int[,] myArray = GetFilledTwoDemArray(sizeN, sizeM);
-Console.WriteLine("New squared array: ");
-PrintSquaredMyArray(myArray);
+// Console.WriteLine("Random array: ");
+// int[,] myArray = GetFilledTwoDemArray(sizeN, sizeM);
+// int sum = GetSumDiagonal(myArray);
+// Console.WriteLine($"The sum of diagonal elemens is: {sum}");
