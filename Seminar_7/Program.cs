@@ -1,30 +1,46 @@
-﻿// // Task 47 Задайте двумерный массив случайными double числами.\
-// ДОДЕЛАТЬ TRY PARSE! ВСЕ РАБОТАЕТ
-// double[,] GetFilledTwoDemArray(int sizeN, int sizeM, double startValue, double endValue)
-// {
-//     var myArray = new double [sizeN, sizeM];
-//     var random = new Random();
-//     for (int i = 0; i < myArray.GetLength(0); i++)
-//     {
-//         for (int j = 0; j < myArray.GetLength(1); j++)
-//         {
-//             myArray[i, j] = Math.Round(random.NextDouble() * (endValue + 1 - startValue)
-//             + startValue, 2, MidpointRounding.AwayFromZero);
-//             Console.Write(myArray[i, j]);
-//             Console.Write(" ");
-//         }
-//     Console.WriteLine("");
-//     }
-//     return myArray;
-// }
+﻿// Task 47 Задайте двумерный массив случайными double числами.
 
-// Console.Write("Input nimber of rows: ");
-// int sizeN = int.Parse(Console.ReadLine());
-// Console.Write("Input number of columns: ");
-// int sizeM = int.Parse(Console.ReadLine());
-    
-// // Диапазон выбран для примера
-// GetFilledTwoDemArray(sizeN, sizeM, -100, 100);
+double[,] GetFilledTwoDemArray(int sizeN, int sizeM, double startValue, double endValue)
+{
+    var myArray = new double [sizeN, sizeM];
+    var random = new Random();
+    for (int i = 0; i < myArray.GetLength(0); i++)
+    {
+        for (int j = 0; j < myArray.GetLength(1); j++)
+        {
+            myArray[i, j] = Math.Round(random.NextDouble() * (endValue + 1 - startValue)
+            + startValue, 2, MidpointRounding.AwayFromZero);
+            Console.Write(myArray[i, j]);
+            Console.Write("  ");
+        }
+    Console.WriteLine("");
+    }
+    return myArray;
+}
+
+int sizeN = 0;
+int sizeM = 0;
+
+Console.Write("Input nimber of rows: ");
+bool parseNIsOk = int.TryParse(Console.ReadLine(), out int n);
+if (!parseNIsOk)
+{
+    Console.WriteLine("Error! You have to input number of rows and columns!");
+    return;
+}
+else sizeN = n;
+
+Console.Write("Input number of columns: ");
+bool parseMIsOk = int.TryParse(Console.ReadLine(), out int m);
+if (!parseMIsOk)
+{
+    Console.WriteLine("Error! You have to input number of rows and columns!");
+    return;
+}
+else sizeM = m;
+   
+// Диапазон выбран для примера
+GetFilledTwoDemArray(sizeN, sizeM, -100, 100);
 
 
 // Task 50 Программа принимает позицию элемента и возвращает его значение или указание, что нет
