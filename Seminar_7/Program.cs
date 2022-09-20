@@ -1,49 +1,49 @@
 ﻿// Task 47 Задайте двумерный массив случайными double числами.
 
-double[,] GetFilledTwoDemArray(int sizeN, int sizeM, double startValue, double endValue)
-{
-    var myArray = new double [sizeN, sizeM];
-    var random = new Random();
-    for (int i = 0; i < myArray.GetLength(0); i++)
-    {
-        for (int j = 0; j < myArray.GetLength(1); j++)
-        {
-            myArray[i, j] = Math.Round(random.NextDouble() * (endValue + 1 - startValue)
-            + startValue, 2, MidpointRounding.AwayFromZero);
-            Console.Write(myArray[i, j]);
-            Console.Write("  ");
-        }
-    Console.WriteLine("");
-    }
-    return myArray;
-}
+// double[,] GetFilledTwoDemArray(int sizeN, int sizeM, double startValue, double endValue)
+// {
+//     var myArray = new double [sizeN, sizeM];
+//     var random = new Random();
+//     for (int i = 0; i < myArray.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < myArray.GetLength(1); j++)
+//         {
+//             myArray[i, j] = Math.Round(random.NextDouble() * (endValue + 1 - startValue)
+//             + startValue, 2, MidpointRounding.AwayFromZero);
+//             Console.Write(myArray[i, j]);
+//             Console.Write("  ");
+//         }
+//     Console.WriteLine("");
+//     }
+//     return myArray;
+// }
 
-int sizeN = 0;
-int sizeM = 0;
+// int sizeN = 0;
+// int sizeM = 0;
 
-Console.Write("Input nimber of rows: ");
-bool parseNIsOk = int.TryParse(Console.ReadLine(), out int n);
-if (!parseNIsOk)
-{
-    Console.WriteLine("Error! You have to input number of rows and columns!");
-    return;
-}
-else sizeN = n;
+// Console.Write("Input nimber of rows: ");
+// bool parseNIsOk = int.TryParse(Console.ReadLine(), out int n);
+// if (!parseNIsOk)
+// {
+//     Console.WriteLine("Error! You have to input number of rows and columns!");
+//     return;
+// }
+// else sizeN = n;
 
-Console.Write("Input number of columns: ");
-bool parseMIsOk = int.TryParse(Console.ReadLine(), out int m);
-if (!parseMIsOk)
-{
-    Console.WriteLine("Error! You have to input number of rows and columns!");
-    return;
-}
-else sizeM = m;
+// Console.Write("Input number of columns: ");
+// bool parseMIsOk = int.TryParse(Console.ReadLine(), out int m);
+// if (!parseMIsOk)
+// {
+//     Console.WriteLine("Error! You have to input number of rows and columns!");
+//     return;
+// }
+// else sizeM = m;
    
-// Диапазон выбран для примера
-GetFilledTwoDemArray(sizeN, sizeM, -100, 100);
+// // Диапазон выбран для примера
+// GetFilledTwoDemArray(sizeN, sizeM, -10, 10);
 
 
-// Task 50 Программа принимает позицию элемента и возвращает его значение или указание, что нет
+// Task 50 Программа принимает позицию элемента и возвращает его значение или указание, что нет.
 // Элемент - целое число
 
 // int [,] GetFilledTwoDemArray(int sizeN, int sizeM)
@@ -101,7 +101,7 @@ GetFilledTwoDemArray(sizeN, sizeM, -100, 100);
 //     {
 //         for (int j = 0; j < myArray.GetLength(1); j++)
 //         {
-//             myArray[i, j] = random.Next(1, 10);
+//             myArray[i, j] = random.Next(1, 20);
 //             Console.Write($"{myArray[i, j]} ");
 //         }
 //     Console.WriteLine("");
@@ -113,7 +113,7 @@ GetFilledTwoDemArray(sizeN, sizeM, -100, 100);
 // // Задает случайный размер массива.
 // {
 //     var random = new Random();
-//     int size = random.Next(1, 6);
+//     int size = random.Next(1, 10);
 //     // Прописываю ограниченный размер массива.
 //     return size;
 // }
@@ -140,7 +140,7 @@ GetFilledTwoDemArray(sizeN, sizeM, -100, 100);
 // var myArray = GetFilledTwoDemArray(sizeN, sizeN);
 
 // double [] result = GetMean(myArray);
-// Console.Write($"Means in random array columns are: [{string.Join("; ", result)}]");;
+// Console.Write($"Means in random array columns are: [{string.Join("; ", result)}]");
 
 // Task 46 Заполнить массив случайными целыми числами
 
