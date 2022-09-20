@@ -163,21 +163,143 @@
 
 // Task 48 Заполнить массив числами по формуле: в каждой ячейке сумма ее координат
 
+// int sizeN = 0;
+// int sizeM = 0;
+
+// void GetFilledTwoDemArray(int sizeN, int sizeM)
+// {
+//     var myArray = new int [sizeN, sizeM];
+//     for (int i = 0; i < myArray.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < myArray.GetLength(1); j++)
+//         {
+//             myArray[i, j] = i + j;
+//             Console.Write(myArray[i, j]);
+//             Console.Write(" ");
+//         }
+//     Console.WriteLine("");  
+//     }
+// }
+
+// Console.Write("Input nimber of rows: ");
+// bool parseNIsOk = int.TryParse(Console.ReadLine(), out int n);
+// if (!parseNIsOk)
+// {
+//     Console.WriteLine("Error! You have to input number of rows and columns!");
+//     return;
+// }
+// else sizeN = n;
+
+// Console.Write("Input number of columns: ");
+// bool parseMIsOk = int.TryParse(Console.ReadLine(), out int m);
+// if (!parseMIsOk)
+// {
+//     Console.WriteLine("Error! You have to input number of rows and columns!");
+//     return;
+// }
+// else sizeM = m;
+
+// GetFilledTwoDemArray(sizeN, sizeM);
+
+// // Task 50 Заменить числа в четных индексах на их квадраты
+
+// int sizeN = 0;
+// int sizeM = 0;
+
+// int [,] GetFilledTwoDemArray(int sizeN, int sizeM)
+// {
+//     var myArray = new int [sizeN, sizeM];
+//     var random = new Random();
+//     for (int i = 0; i < myArray.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < myArray.GetLength(1); j++)
+//         {
+//             myArray[i, j] = random.Next(1, 10);
+//             Console.Write(myArray[i, j]);
+//             Console.Write(" ");
+//         }
+//     Console.WriteLine("");
+//     }
+//     return myArray;
+// }
+
+// void PrintSquaredMyArray(int[,] myArray)
+// {
+//     for (int i = 0; i < myArray.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < myArray.GetLength(1); j++)
+//         {
+//         if (i % 2 == 0 && j % 2 == 0)
+//         {
+//             myArray[i, j] *= myArray[i, j];
+//         }
+//         Console.Write(myArray[i, j]);
+//         Console.Write(" ");
+//         }
+//     Console.WriteLine("");
+//     }
+// }
+
+// Console.Write("Input nimber of rows: ");
+// bool parseNIsOk = int.TryParse(Console.ReadLine(), out int n);
+// if (!parseNIsOk)
+// {
+//     Console.WriteLine("Error! You have to input number of rows and columns!");
+//     return;
+// }
+// else sizeN = n;
+
+// Console.Write("Input number of columns: ");
+// bool parseMIsOk = int.TryParse(Console.ReadLine(), out int m);
+// if (!parseMIsOk)
+// {
+//     Console.WriteLine("Error! You have to input number of rows and columns!");
+//     return;
+// }
+// else sizeM = m;
+
+// Console.WriteLine("Random array: ");
+// int[,] myArray = GetFilledTwoDemArray(sizeN, sizeM);
+// Console.WriteLine("New squared array: ");
+// PrintSquaredMyArray(myArray);
+
+
+// Task 50 Заменить числа в четных индексах на их квадраты
+
 int sizeN = 0;
 int sizeM = 0;
 
-void GetFilledTwoDemArray(int sizeN, int sizeM)
+int [,] GetFilledTwoDemArray(int sizeN, int sizeM)
 {
     var myArray = new int [sizeN, sizeM];
+    var random = new Random();
     for (int i = 0; i < myArray.GetLength(0); i++)
     {
         for (int j = 0; j < myArray.GetLength(1); j++)
         {
-            myArray[i, j] = i + j;
+            myArray[i, j] = random.Next(1, 10);
             Console.Write(myArray[i, j]);
             Console.Write(" ");
         }
-    Console.WriteLine("");  
+    Console.WriteLine("");
+    }
+    return myArray;
+}
+
+void PrintSquaredMyArray(int[,] myArray)
+{
+    for (int i = 0; i < myArray.GetLength(0); i++)
+    {
+        for (int j = 0; j < myArray.GetLength(1); j++)
+        {
+        if (i % 2 == 0 && j % 2 == 0)
+        {
+            myArray[i, j] *= myArray[i, j];
+        }
+        Console.Write(myArray[i, j]);
+        Console.Write(" ");
+        }
+    Console.WriteLine("");
     }
 }
 
@@ -199,5 +321,7 @@ if (!parseMIsOk)
 }
 else sizeM = m;
 
-GetFilledTwoDemArray(sizeN, sizeM);
-
+Console.WriteLine("Random array: ");
+int[,] myArray = GetFilledTwoDemArray(sizeN, sizeM);
+Console.WriteLine("New squared array: ");
+PrintSquaredMyArray(myArray);
