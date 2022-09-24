@@ -68,7 +68,6 @@ void PrintMyArray(int[,] myArray)
 //     return sortArray;
 // }
 
-
 // Console.WriteLine("Task 54");
 
 // int sizeN = GetRandomSize();
@@ -77,6 +76,7 @@ void PrintMyArray(int[,] myArray)
 
 // var sortArray = GetSortArray(myArray);
 // PrintMyArray(sortArray);
+// Console.WriteLine("-------------");
 
 // Задача 56: Задайте прямоугольный двумерный массив. Напишите программу, которая будет находить
 //строку с наименьшей суммой элементов.
@@ -131,12 +131,44 @@ void PrintMyArray(int[,] myArray)
 // 18 20
 // 15 18
 
-// Задача 60. ...Сформируйте трёхмерный массив из неповторяющихся двузначных чисел. Напишите программу, которая будет построчно выводить массив, добавляя индексы каждого элемента.
+// Console.WriteLine("Task 58");
+
+// Console.WriteLine("-------------");
+
+// Задача 60. ...Сформируйте трёхмерный массив из неповторяющихся двузначных чисел. Напишите программу,
+// которая будет построчно выводить массив, добавляя индексы каждого элемента.
 // Массив размером 2 x 2 x 2
 // 66(0,0,0) 25(0,1,0)
 // 34(1,0,0) 41(1,1,0)
 // 27(0,0,1) 90(0,1,1)
 // 26(1,0,1) 55(1,1,1)
+
+// int [,,] GetFillThreeArray(int sizeN, int sizeM, int sizeK)
+// {
+//     var myArray = new int [sizeN, sizeM, sizeK];
+//     var random = new Random();
+//     Console.WriteLine("Random three dimensional array is: ");
+//     for (int i = 0; i < myArray.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < myArray.GetLength(1); j++)
+//         {
+//             for (int k = 0; k < myArray.GetLength(2); k++)
+//             {
+//                  myArray[i, j, k] = random.Next(-5, 5);
+//                 Console.WriteLine($"{myArray[i, j, k]} ({i}, {j}, {k}) ");
+//             }
+//             Console.WriteLine("");            
+//         }
+//     }
+//     return myArray;
+// }
+
+// int sizeN = 2;
+// int sizeM = 2;
+// int sizeK = 2;
+// Console.WriteLine("Task 60");
+// var myArray = GetFillThreeArray(sizeN, sizeM, sizeK);
+// Console.WriteLine("-------------");
 
 // Задача 62. Напишите программу, которая заполнит спирально массив 4 на 4.
 // Например, на выходе получается вот такой массив:
@@ -145,24 +177,12 @@ void PrintMyArray(int[,] myArray)
 // 11 16 15 06
 // 10 09 08 07
 
+// Console.WriteLine("Task 62");
+
+// Console.WriteLine("-------------");
+
 //Task 53
 // В двумерном массиве поменять местами первую и последнюю строку
-
-// int [,] GetFilledArray(int sizeN, int sizeM)
-// {
-//     var myArray = new int [sizeN, sizeM];
-//     var random = new Random();
-//     for (int i = 0; i < myArray.GetLength(0); i++)
-//     {
-//         for (int j = 0; j < myArray.GetLength(1); j++)
-//         {
-//             myArray[i, j] = random.Next(1, 10);
-//             Console.Write($"{myArray[i, j]} ");
-//         }
-//     Console.WriteLine("");
-//     }
-//     return myArray;
-// }
 
 // int [,] GetReverseArray(int[,] myArray)
 // {
@@ -176,24 +196,14 @@ void PrintMyArray(int[,] myArray)
 //    return myArray;
 // }
 
-// void PrintMyArray(int[,] myArray)
-// {
-//     for (int i = 0; i < myArray.GetLength(0); i++)
-//     {
-//         for (int j = 0; j < myArray.GetLength(1); j++)
-//         {
-//         Console.Write(myArray[i, j]);
-//         Console.Write(" ");
-//         }
-//     Console.WriteLine("");
-//     }
-// }
+// Console.WriteLine("Task 53");
 
 // var myArray = GetFilledArray(4, 3);
 // // Делаю на примере небольшого массива
 // var reverseArray = GetReverseArray(myArray);
 // Console.WriteLine("-----------------");
 // PrintMyArray(reverseArray);
+// Console.WriteLine("-------------");
 
 // Task 55 В двумерном массиве поменять местами строки со столбцами.
 // Если это невозможно, сообщить.
@@ -228,7 +238,7 @@ void PrintMyArray(int[,] myArray)
 //     Console.WriteLine("-----------------");
 //     PrintMyArray(turnArray);
 // }
-
+// Console.WriteLine("-------------");
 
 // Task 57
 // Сколько раз встречается каждый элемент в массиве
@@ -274,6 +284,7 @@ void PrintMyArray(int[,] myArray)
 //         Console.WriteLine($"Элемент {i} встречается {quantityArray[i]} раз ");
 //     }
 // }
+// Console.WriteLine("-------------");
 
 // Task 59 Удалить строку и столбец, на пересечении которых наименьший элемент массива
 
@@ -314,13 +325,13 @@ void PrintMyArray(int[,] myArray)
 
 // int sizeN = GetRandomSize();
 // int sizeM = GetRandomSize();
+// Console.WriteLine("Task 59");
 // if (sizeN < 1 | sizeM < 1)
 // {
 //     Console.WriteLine("This operation is not possible");
 // }
 // else
-// {
-//     Console.WriteLine("Task 59");
+// {   
 //     var myArray = GetFilledArray(sizeN, sizeM);
 //     Console.WriteLine("--------------");
 
@@ -329,3 +340,4 @@ void PrintMyArray(int[,] myArray)
 //     int [,] reducedArray = GetReducedArray(myArray, indexMin);
 //     PrintMyArray(reducedArray);
 // }
+// Console.WriteLine("-------------");
