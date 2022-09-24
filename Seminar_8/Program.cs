@@ -66,7 +66,132 @@
 // 10 09 08 07
 
 //Task 53
-// В двумерной массиве поменять местами первую и последнюю строку
+// В двумерном массиве поменять местами первую и последнюю строку
+
+// int [,] GetFilledArray(int sizeN, int sizeM)
+// {
+//     var myArray = new int [sizeN, sizeM];
+//     var random = new Random();
+//     for (int i = 0; i < myArray.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < myArray.GetLength(1); j++)
+//         {
+//             myArray[i, j] = random.Next(1, 10);
+//             Console.Write($"{myArray[i, j]} ");
+//         }
+//     Console.WriteLine("");
+//     }
+//     return myArray;
+// }
+
+// int [,] GetReverseArray(int[,] myArray)
+// {
+//     int tmp = 0;
+//     for (int i = 0; i < myArray.GetLength(0); i += myArray.GetLength(0))
+//     {
+//          tmp = myArray[i, j];
+//          myArray[i, j] = myArray[myArray.GetLength(0) - 1, j];
+//          myArray[myArray.GetLength(0) - 1, j] = tmp;
+//     }
+//    return myArray;
+// }
+
+// void PrintMyArray(int[,] myArray)
+// {
+//     for (int i = 0; i < myArray.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < myArray.GetLength(1); j++)
+//         {
+//         Console.Write(myArray[i, j]);
+//         Console.Write(" ");
+//         }
+//     Console.WriteLine("");
+//     }
+// }
+
+// var myArray = GetFilledArray(4, 3);
+// // Делаю на примере небольшого массива
+// var reverseArray = GetReverseArray(myArray);
+// Console.WriteLine("-----------------");
+// PrintMyArray(reverseArray);
+
+// Task 55 В двумерном массиве поменять местами строки со столбцами.
+// Если это невозможно, сообщить.
+
+// int [,] GetFilledArray(int sizeN, int sizeM)
+// {
+//     var myArray = new int [sizeN, sizeM];
+//     var random = new Random();
+//     for (int i = 0; i < myArray.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < myArray.GetLength(1); j++)
+//         {
+//             myArray[i, j] = random.Next(1, 10);
+//             Console.Write($"{myArray[i, j]} ");
+//         }
+//     Console.WriteLine("");
+//     }
+//     return myArray;
+// }
+
+// int GetRandomSize ()
+// // Задает случайный размер массива.
+// {
+//     var random = new Random();
+//     int size = random.Next(1, 10);
+//     // Прописываю ограниченный размер массива.
+//     return size;
+// }
+
+// int [,] GetTurnArray(int[,] myArray)
+// {
+//     var turnArray = new int[myArray.GetLength(1), myArray.GetLength(0)];
+//     for (int i = 0; i < turnArray.GetLength(0); i ++)
+//     {
+//         for (int j = 0; j < turnArray.GetLength(1); j++)
+//         {
+//             turnArray[i, j] = myArray[j, i];
+//         }
+//     }
+//     return turnArray;
+// }
+
+// void PrintMyArray(int[,] myArray)
+// {
+//     for (int i = 0; i < myArray.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < myArray.GetLength(1); j++)
+//         {
+//         Console.Write(myArray[i, j]);
+//         Console.Write(" ");
+//         }
+//     Console.WriteLine("");
+//     }
+// }
+
+// // int sizeN = GetRandomSize();
+// // int sizeM = GetRandomSize();
+// int sizeN = 4;
+// int sizeM = 4;
+// if (sizeN != sizeM)
+// {
+//     Console.WriteLine("Error! Its not possible for rectangular array!");
+//     return;
+// }
+// else
+// {
+//     var myArray = GetFilledArray(sizeN, sizeM);
+// // Делаю на примере небольшого массива
+//     int [,] turnArray = GetTurnArray(myArray);
+//     Console.WriteLine("-----------------");
+//     PrintMyArray(turnArray);
+// }
+
+
+// Task 57
+// Сколько раз встречается каждый элемент в массиве
+
+using System.Linq;
 
 int [,] GetFilledArray(int sizeN, int sizeM)
 {
@@ -76,7 +201,7 @@ int [,] GetFilledArray(int sizeN, int sizeM)
     {
         for (int j = 0; j < myArray.GetLength(1); j++)
         {
-            myArray[i, j] = random.Next(1, 10);
+            myArray[i, j] = random.Next(0, 10);
             Console.Write($"{myArray[i, j]} ");
         }
     Console.WriteLine("");
@@ -84,36 +209,96 @@ int [,] GetFilledArray(int sizeN, int sizeM)
     return myArray;
 }
 
-int [,] GetReverseArray(int[,] myArray)
+int GetRandomSize ()
+// Задает случайный размер массива.
 {
-    int tmp = 0;
-    for (int i = 0; i < myArray.GetLength(0); i += myArray.GetLength(0))
-    {
-        for (int j = 0; j < myArray.GetLength(1); j++)
-        {
-            tmp = myArray[i, j];
-            myArray[i, j] = myArray[myArray.GetLength(0) - 1, j];
-            myArray[myArray.GetLength(0) - 1, j] = tmp;
-        }
-    }
-    return myArray;
+    var random = new Random();
+    int size = random.Next(1, 5);
+    // Прописываю ограниченный размер массива.
+    return size;
 }
 
-void PrintMyArray(int[,] myArray)
+// Поиск количества значений каждого элемента
+int [] CountQuantityElem(int[,] myArray, int max, int min)
 {
-    for (int i = 0; i < myArray.GetLength(0); i++)
+        // сделать массив массивов
+    var quantityArray = new int[max - min + 1];
+    for (int k = min; k < quantityArray.Length + 1; k++)
     {
-        for (int j = 0; j < myArray.GetLength(1); j++)
+        for (int i = 0; i < myArray.GetLength(0); i ++)
         {
-        Console.Write(myArray[i, j]);
-        Console.Write(" ");
+            for (int j = 0; j < myArray.GetLength(1); j++)
+            {
+                if (myArray[i, j] == k) quantityArray[k] += 1;
+            }
         }
-    Console.WriteLine("");
+    }       
+    return quantityArray;
+}
+
+int sizeN = GetRandomSize();
+int sizeM = GetRandomSize();
+
+var myArray = GetFilledArray(sizeN, sizeM);
+Console.WriteLine("--------------");
+
+// Мин и макс в двумерном массиве
+int maxValue = myArray.Cast<int>().Max();
+int minValue = myArray.Cast<int>().Min();
+
+
+int [] quantityArray = CountQuantityElem(myArray, maxValue, minValue);
+
+for (int i = 0; i < quantityArray.Length; i ++)
+{
+    if (quantityArray[i] != 0)
+    {
+        Console.WriteLine($"Элемент {i} встречается {quantityArray[i]} раз ");
     }
 }
 
-var myArray = GetFilledArray(4, 3);
-// Делаю на примере небольшого массива
-var reverseArray = GetReverseArray(myArray);
-Console.WriteLine("-----------------");
-PrintMyArray(reverseArray);
+// Task 59 Удалить строку и столбец, на пересечении которых наименьший элемент массива
+
+// int [,] GetFilledArray(int sizeN, int sizeM)
+// {
+//     var myArray = new int [sizeN, sizeM];
+//     var random = new Random();
+//     for (int i = 0; i < myArray.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < myArray.GetLength(1); j++)
+//         {
+//             myArray[i, j] = random.Next(0, 10);
+//             Console.Write($"{myArray[i, j]} ");
+//         }
+//     Console.WriteLine("");
+//     }
+//     return myArray;
+// }
+
+// int GetRandomSize ()
+// // Задает случайный размер массива.
+// {
+//     var random = new Random();
+//     int size = random.Next(1, 10);
+//     // Прописываю ограниченный размер массива.
+//     return size;
+// }
+
+// int SearchMin(int[,] myArray)
+// {
+//     int min = myArray[0, 0];
+//     for (int i = 0; i < myArray.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < myArray.GetLength(1); j++)
+//         {
+//             if (myArray[i, j] < min) min = myArray[i, j];
+//         }
+//     }
+//     return min;
+// }
+
+
+// int sizeN = GetRandomSize();
+// int sizeM = GetRandomSize();
+
+// var myArray = GetFilledArray(sizeN, sizeM);
