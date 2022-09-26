@@ -131,10 +131,36 @@ void PrintMyArray(int[,] myArray)
 // 18 20
 // 15 18
 
+Console.WriteLine("Task 58");
+// Работает на квадратных матрицах, можно сделать и для прямоугольных
+// Удобнее проверять на них)
 
-// Console.WriteLine("Task 58");
+int size = 2;
 
-// Console.WriteLine("-------------");
+int [,] MultyplyMatrix (int [,] matrix1, int [,] matrix2)
+{
+    var multy = new int [matrix1.GetLength(0), matrix1.GetLength(1)];
+   
+    for(int i = 0; i < matrix1.GetLength(0); i++)
+    {
+        for(int j = 0; j < matrix1.GetLength(0); j++)
+        {
+            for (int k =0; k <matrix1.GetLength(0); k++)
+            {
+                multy[i, j] += matrix1[i, k] * matrix2[k, j];
+            }
+        }
+    }
+    return multy;
+}
+
+var matrix1 = GetFilledArray(size, size);
+var matrix2 = GetFilledArray(size, size);
+Console.WriteLine("Multy is: ");
+var multy = MultyplyMatrix(matrix1, matrix2);
+PrintMyArray(multy);
+
+Console.WriteLine("-------------");
 
 // Задача 60. ...Сформируйте трёхмерный массив из неповторяющихся двузначных чисел. Напишите программу,
 // которая будет построчно выводить массив, добавляя индексы каждого элемента.
