@@ -17,11 +17,11 @@ int [,] GetFilledArray(int sizeN, int sizeM)
     return myArray;
 }
 
-int GetRandomSize ()
+int GetRandomValue()
 // Задает случайный размер массива.
 {
     var random = new Random();
-    int size = random.Next(1, 5);
+    int size = random.Next(1, 10);
     return size;
 }
 
@@ -70,8 +70,8 @@ void PrintMyArray(int[,] myArray)
 
 // Console.WriteLine("Task 54");
 
-// int sizeN = GetRandomSize();
-// int sizeM = GetRandomSize();
+// int sizeN = GetRandomValue();
+// int sizeM = GetRandomValue();
 // int [,] myArray = GetFilledArray(sizeN, sizeM);
 
 // var sortArray = GetSortArray(myArray);
@@ -110,8 +110,8 @@ void PrintMyArray(int[,] myArray)
 
 // Console.WriteLine("Task 56");
 
-// int sizeN = GetRandomSize();
-// int sizeM = GetRandomSize();
+// int sizeN = GetRandomValue();
+// int sizeM = GetRandomValue());
 // if (sizeN == sizeM) Console.WriteLine("Error! Array have to be rectangle!");
 // else
 // {
@@ -130,6 +130,7 @@ void PrintMyArray(int[,] myArray)
 // Результирующая матрица будет:
 // 18 20
 // 15 18
+
 
 // Console.WriteLine("Task 58");
 
@@ -178,7 +179,45 @@ void PrintMyArray(int[,] myArray)
 // 10 09 08 07
 
 // Console.WriteLine("Task 62");
+// // Для массива случайной размерности (для собственного интереса)
+// int startPoint = 0;
+// int [,] GetSpiralArray(int size, int startValue, int startPoint)
+// {
+//     var spiralArray = new int[size, size];
+//     spiralArray[startPoint, startPoint] = startValue;
+//     int x = spiralArray.GetLength(0);
+//     int y = spiralArray.GetLength(1);
+//     for (int k = 0; k < size / 2; k++)
+//     // Цикл для заполнения квадратов массива.
+//     {
+//         for (int i = startPoint; i < x - startPoint; i++)
+//         { 
+//             for (int j = startPoint; j < y - startPoint; j++)
+//             {
+//                 if (i == startPoint) spiralArray[i, j] = startValue ++;
+//                 else if (j == y - startPoint - 1) spiralArray[i, j] = startValue ++;
+//             }
+//         }
+//         for (int i = x - startPoint - 1; i > startPoint; i--)
+//         { 
+//             for (int j = y - startPoint - 2; j >=  startPoint; j--)
+//             {
+//                 if (i == x - startPoint - 1) spiralArray[i, j] = startValue ++;
+//                 else if (j == startPoint) spiralArray[i, j] = startValue ++;
+//             }
+//         }
+//         size = size * size - 3;
+//         startPoint ++;
+//     }
+//     return spiralArray;
+// }
 
+// int size = GetRandomValue();
+// int startValue = GetRandomValue();
+// Console.WriteLine($"Start value is {startValue}");
+
+// var spiralArray = GetSpiralArray(size, startValue, startPoint);
+// PrintMyArray(spiralArray);
 // Console.WriteLine("-------------");
 
 //Task 53
@@ -221,8 +260,8 @@ void PrintMyArray(int[,] myArray)
 //     return turnArray;
 // }
 
-// int sizeN = GetRandomSize();
-// int sizeM = GetRandomSize();
+// int sizeN = GetRandomValue();
+// int sizeM = GetRandomValue();
 //Console.WriteLine("Task 55");
 
 // if (sizeN != sizeM)
@@ -263,8 +302,8 @@ void PrintMyArray(int[,] myArray)
 //     return quantityArray;
 // }
 
-// int sizeN = GetRandomSize();
-// int sizeM = GetRandomSize();
+// int sizeN = GetRandomValue();
+// int sizeM = GetRandomValue();
 //Console.WriteLine("Task 57");
 
 // var myArray = GetFilledArray(sizeN, sizeM);
@@ -323,8 +362,8 @@ void PrintMyArray(int[,] myArray)
 //     return reducedArray;
 // }
 
-// int sizeN = GetRandomSize();
-// int sizeM = GetRandomSize();
+// int sizeN = GetRandomValue();
+// int sizeM = GetRandomValue();
 // Console.WriteLine("Task 59");
 // if (sizeN < 1 | sizeM < 1)
 // {
