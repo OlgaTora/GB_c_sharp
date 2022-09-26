@@ -48,24 +48,26 @@ void PrintMyArray(int[,] myArray)
 // 9 5 3 2
 // 8 4 4 2
 
-
 // int[,] GetSortArray(int [,] myArray)
 // {
-//     var sortArray = new int[myArray.GetLength(0), myArray.GetLength(1)];
-//     for (int i = 0; i < sort.GetLength(0); i++)
-//     {
-//         max = myArray[i, 0]
-//         for (int j = 0; j < sort.GetLength(1); j++)
-//         {
-//             if (myArray[i, j] < max)
-//             {
-                
+//     int tmp = myArray[0, 0];
 
+//     for (int i = 0; i < myArray.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < myArray.GetLength(1) - 1; j++)
+//         {   
+//             for (int k = 0; k < myArray.GetLength(1) -1; k++)
+//             {   
+//                 if (myArray[i, k] < myArray[i, k + 1])
+//                 {
+//                     tmp = myArray[i, k];
+//                     myArray[i, k] = myArray[i, k + 1];
+//                     myArray[i, k + 1] = tmp;
+//                 } 
 //             }
 //         }
-
-
-//     return sortArray;
+//     }
+//     return myArray;
 // }
 
 // Console.WriteLine("Task 54");
@@ -73,6 +75,7 @@ void PrintMyArray(int[,] myArray)
 // int sizeN = GetRandomValue();
 // int sizeM = GetRandomValue();
 // int [,] myArray = GetFilledArray(sizeN, sizeM);
+// Console.WriteLine("Sorted array is: ");
 
 // var sortArray = GetSortArray(myArray);
 // PrintMyArray(sortArray);
@@ -131,38 +134,38 @@ void PrintMyArray(int[,] myArray)
 // 18 20
 // 15 18
 
-Console.WriteLine("Task 58");
-// Работает на квадратных матрицах, можно сделать и для прямоугольных
-// Удобнее проверять на них)
+// Console.WriteLine("Task 58");
+// // Работает на квадратных матрицах, можно сделать и для прямоугольных
+// // Удобнее проверять на них)
 
-int size = 2;
+// int size = 2;
 
-int [,] MultyplyMatrix (int [,] matrix1, int [,] matrix2)
-{
-    var multy = new int [matrix1.GetLength(0), matrix1.GetLength(1)];
+// int [,] MultyplyMatrix (int [,] matrix1, int [,] matrix2)
+// {
+//     var multy = new int [matrix1.GetLength(0), matrix1.GetLength(1)];
    
-    for(int i = 0; i < matrix1.GetLength(0); i++)
-    {
-        for(int j = 0; j < matrix1.GetLength(0); j++)
-        {
-            for (int k =0; k <matrix1.GetLength(0); k++)
-            {
-                multy[i, j] += matrix1[i, k] * matrix2[k, j];
-            }
-        }
-    }
-    return multy;
-}
+//     for(int i = 0; i < matrix1.GetLength(0); i++)
+//     {
+//         for(int j = 0; j < matrix1.GetLength(0); j++)
+//         {
+//             for (int k =0; k <matrix1.GetLength(0); k++)
+//             {
+//                 multy[i, j] += matrix1[i, k] * matrix2[k, j];
+//             }
+//         }
+//     }
+//     return multy;
+// }
 
-var matrix1 = GetFilledArray(size, size);
-var matrix2 = GetFilledArray(size, size);
-Console.WriteLine("Multy is: ");
-var multy = MultyplyMatrix(matrix1, matrix2);
-PrintMyArray(multy);
+// var matrix1 = GetFilledArray(size, size);
+// var matrix2 = GetFilledArray(size, size);
+// Console.WriteLine("Multy is: ");
+// var multy = MultyplyMatrix(matrix1, matrix2);
+// PrintMyArray(multy);
 
-Console.WriteLine("-------------");
+// Console.WriteLine("-------------");
 
-// Задача 60. ...Сформируйте трёхмерный массив из неповторяющихся двузначных чисел. Напишите программу,
+// Задача 60. Сформируйте трёхмерный массив из неповторяющихся двузначных чисел. Напишите программу,
 // которая будет построчно выводить массив, добавляя индексы каждого элемента.
 // Массив размером 2 x 2 x 2
 // 66(0,0,0) 25(0,1,0)
@@ -195,6 +198,14 @@ Console.WriteLine("-------------");
 // int sizeK = 2;
 // Console.WriteLine("Task 60");
 // var myArray = GetFillThreeArray(sizeN, sizeM, sizeK);
+// Console.WriteLine("-------------");
+
+//Задача 61. Вывести треугольник Паскаля.
+
+// Console.WriteLine("Task 61");
+
+
+
 // Console.WriteLine("-------------");
 
 // Задача 62. Напишите программу, которая заполнит спирально массив 4 на 4.
