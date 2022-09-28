@@ -32,21 +32,22 @@ int endNumber = int.Parse(Console.ReadLine());
 string GetNaturalNumbers(int startNumber, int endNumber)
 {
     string natNum = "";
-    if (endNumber == 1) natNum = "1";
-    else natNum = GetNaturalNumbers(endNumber - 1) +"," + $"{endNumber}";
+    if (endNumber == startNumber) natNum = $"{startNumber}";
+    else natNum = GetNaturalNumbers(startNumber, endNumber - 1) + ", " + $"{endNumber}";
     return natNum;
-}     
-Console.WriteLine(GetNaturalNumbers(endNumber));
-
-int GetSumNumbers(int endNumber)
-{
-    if(endNumber == 0) return 0;
-    int sum = 0;
-    sum = GetSumNumbers(endNumber - 1) + endNumber;
-    return sum;
 }
-int sum = GetSumNumbers(endNumber);
-Console.WriteLine(sum);
+
+Console.WriteLine(GetNaturalNumbers(startNumber, endNumber));
+
+// int GetSumNumbers(int endNumber)
+// {
+//     if(endNumber == 0) return 0;
+//     int sum = 0;
+//     sum = GetSumNumbers(endNumber - 1) + endNumber;
+//     return sum;
+// }
+// int sum = GetSumNumbers(endNumber);
+// Console.WriteLine(sum);
 
 // Task 67. Считаем сумму цифр в числе, рекурсия.
 
