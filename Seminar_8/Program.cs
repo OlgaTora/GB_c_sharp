@@ -1,5 +1,7 @@
 ﻿// В задачах много общего, вынесу функции создания массива, выбора его размера и печать отдельно
 
+using System.Linq;
+
 int [,] GetFilledArray(int sizeN, int sizeM)
 {
     var myArray = new int [sizeN, sizeM];
@@ -31,8 +33,8 @@ void PrintMyArray(int[,] myArray)
     {
         for (int j = 0; j < myArray.GetLength(1); j++)
         {
-        Console.Write(myArray[i, j]);
-        Console.Write(" ");
+            Console.Write(myArray[i, j]);
+            Console.Write(" ");
         }
     Console.WriteLine("");
     }
@@ -94,34 +96,39 @@ void PrintMyArray(int[,] myArray)
 // {
 //     int minSumRow = 0;
 //     int indexMinRow = 0;
+//     int tmpSum = 0;
+    
+//     for (int i = 0; i < myArray.GetLength(1); i++)
+//         {
+//             minSumRow += myArray[0, i];
+//         }
 //     for (int i = 0; i < myArray.GetLength(0); i++)
 //     {
-//         int sum = 0;
-        
 //         for (int j = 0; j < myArray.GetLength(1); j++)
 //         {
-//             sum += myArray[i, j];
-//             if (sum > minSumRow)
-//             {
-//                 minSumRow = sum;
-//                 indexMinRow = i;
-//             }
+//             tmpSum += myArray[i, j];
 //         }
-//     }  
+//         if (tmpSum < minSumRow)
+//         {
+//             minSumRow = tmpSum;
+//             indexMinRow = i;
+//         }
+//         tmpSum = 0;
+//     }
 //     return indexMinRow;
 // }
 
 // Console.WriteLine("Task 56");
 
 // int sizeN = GetRandomValue();
-// int sizeM = GetRandomValue());
+// int sizeM = GetRandomValue();
 // if (sizeN == sizeM) Console.WriteLine("Error! Array have to be rectangle!");
 // else
 // {
 //     int [,] myArray = GetFilledArray(sizeN, sizeM);
 
 //     int indexMinRow = SearchMinSumRow(myArray);
-//     // Строку указаываю как для пользователя, с нумерацией с единицы
+//     // На вывод номер по порядку.
 //     Console.WriteLine($"The row with minimum sum is {indexMinRow + 1}");
 // }
 // Console.WriteLine("-------------");
@@ -173,21 +180,47 @@ void PrintMyArray(int[,] myArray)
 // 27(0,0,1) 90(0,1,1)
 // 26(1,0,1) 55(1,1,1)
 
-// int [,,] GetFillThreeArray(int sizeN, int sizeM, int sizeK)
+// Поиск элемента по массиву.
+// bool SearchElement(int [,,] myArray, int random)
 // {
-//     var myArray = new int [sizeN, sizeM, sizeK];
-//     var random = new Random();
-//     Console.WriteLine("Random three dimensional array is: ");
 //     for (int i = 0; i < myArray.GetLength(0); i++)
 //     {
 //         for (int j = 0; j < myArray.GetLength(1); j++)
 //         {
 //             for (int k = 0; k < myArray.GetLength(2); k++)
 //             {
-//                  myArray[i, j, k] = random.Next(-5, 5);
-//                 Console.WriteLine($"{myArray[i, j, k]} ({i}, {j}, {k}) ");
+//                 if (myArray[i, j, k] == random) return true;
 //             }
-//             Console.WriteLine("");            
+//         }
+//     }
+//     return false;
+// }
+
+// int [,,] GetFillThreeArray(int sizeN, int sizeM, int sizeK)
+// {
+//     var myArray = new int [sizeN, sizeM, sizeK];
+        
+//     for (int i = 0; i < myArray.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < myArray.GetLength(1); j++)
+//         {
+//             for (int k = 0; k < myArray.GetLength(2); k++)
+//             {
+//                 bool flag = false;
+//                 while(flag != true)
+//                 {
+//                     flag = false;
+//                     int random = new Random().Next(0, 20);
+//                     if (SearchElement(myArray, random)) continue;
+//                     else
+//                     {
+//                         myArray[i, j, k] = random;
+//                         Console.WriteLine($"{myArray[i, j, k]} ({i}, {j}, {k}) ");
+//                         flag = true;
+//                     }
+//                     Console.WriteLine("");            
+//                 }
+//             }
 //         }
 //     }
 //     return myArray;
@@ -197,6 +230,8 @@ void PrintMyArray(int[,] myArray)
 // int sizeM = 2;
 // int sizeK = 2;
 // Console.WriteLine("Task 60");
+
+// Console.WriteLine("Random three dimensional array is: ");
 // var myArray = GetFillThreeArray(sizeN, sizeM, sizeK);
 // Console.WriteLine("-------------");
 
@@ -204,7 +239,49 @@ void PrintMyArray(int[,] myArray)
 
 // Console.WriteLine("Task 61");
 
+// void PrintPascal(int[,] myArray)
+// {
+//     for (int i = 0; i < myArray.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < myArray.GetLength(1); j++)
+//         {
+//             if (myArray[i, j] != 0)
+//             {
+//             Console.Write(myArray[i, j]);
+//             Console.Write(" ");
+//             }
+//         }
+//     Console.WriteLine("");
+//     }
+// }
 
+// int [,] GetPascalTriangle(int row)
+// {
+//     int column = row;
+//     var pascalTriangle = new int[row, column];
+
+//     for (int i = 0; i < row; i++)
+//     {
+//         pascalTriangle[i, 0] = 1;
+//         pascalTriangle[i, i] = 1;
+//     }
+
+//     for (int i = 2; i < row; i ++)
+//     {
+//         for (int j = 1; j <= i; j++)
+//         {
+//             pascalTriangle[i, j]  = pascalTriangle[i - 1, j - 1] + pascalTriangle[i - 1, j];
+//         }
+//     }
+//     return pascalTriangle;
+
+// }
+// Console.WriteLine("Inpit number of row for Pascal Triangle");
+// int rowTriangle = int.Parse(Console.ReadLine());
+
+// int [,] pascalTriangle = GetPascalTriangle(rowTriangle);
+// Console.WriteLine("-------------");
+// PrintPascal(pascalTriangle);
 
 // Console.WriteLine("-------------");
 
@@ -299,7 +376,7 @@ void PrintMyArray(int[,] myArray)
 
 // int sizeN = GetRandomValue();
 // int sizeM = GetRandomValue();
-//Console.WriteLine("Task 55");
+// Console.WriteLine("Task 55");
 
 // if (sizeN != sizeM)
 // {
@@ -319,9 +396,7 @@ void PrintMyArray(int[,] myArray)
 // Task 57
 // Сколько раз встречается каждый элемент в массиве
 
-// using System.Linq;
-
-// // Поиск количества значений каждого элемента
+// Поиск количества значений каждого элемента
 // int [] CountQuantityElem(int[,] myArray, int max, int min)
 // {
 //         // сделать массив массивов
@@ -341,7 +416,7 @@ void PrintMyArray(int[,] myArray)
 
 // int sizeN = GetRandomValue();
 // int sizeM = GetRandomValue();
-//Console.WriteLine("Task 57");
+// Console.WriteLine("Task 57");
 
 // var myArray = GetFilledArray(sizeN, sizeM);
 // Console.WriteLine("--------------");
@@ -364,10 +439,10 @@ void PrintMyArray(int[,] myArray)
 
 // Task 59 Удалить строку и столбец, на пересечении которых наименьший элемент массива
 
-// int [] SearchMinIndex(int[,] myArray)
+// int [,] SearchMinIndex(int[,] myArray)
 // {
 //     int min = myArray[0, 0];
-//     var indexMin = new int [2];
+//     var indexMin = new int [1, 2]; //размер массива для координат
 //     for (int i = 0; i < myArray.GetLength(0); i++)
 //     {
 //         for (int j = 0; j < myArray.GetLength(1); j++)
@@ -375,34 +450,40 @@ void PrintMyArray(int[,] myArray)
 //             if (myArray[i, j] < min)
 //             {
 //                 min = myArray[i, j];
-//                 indexMin[0] = i;
-//                 indexMin[1] = j;
+//                 indexMin[0, 0] = i;
+//                 indexMin[0, 1] = j;
 //             }
 //         }
 //     }
 //     return indexMin;
 // }
 
-// int [,] GetReducedArray(int [,] myArray, int[] indexMin)
+// int [,] GetReducedArray(int [,] myArray, int[,] indexMin)
 // {
 //     var reducedArray = new int[myArray.GetLength(0) - 1, myArray.GetLength(1) - 1];
+//     int m = 0; // счетчик для строк нового массива
+//     int k = 0; // счетчик для столбцов нового массива
+
 //     for (int i = 0; i < myArray.GetLength(0); i++)
 //     {
 //         for (int j = 0; j < myArray.GetLength(1); j++)
 //         {
-//             if (i != indexMin[0] && j != indexMin[1])
+//             if (indexMin[0, 0] != i && indexMin[0, 1] != j)
 //             {
-//                 reducedArray[i, j] = myArray[i, j];
-//             }
+//                 reducedArray[m, k] = myArray[i, j];
+//                 k++;
+//             }            
 //         }
+//         // можно сделать через доп циклы, как вариант
+//         k = 0;
+//         if (indexMin[0, 0] != i) m ++;
 //     }
 //     return reducedArray;
 // }
-
 // int sizeN = GetRandomValue();
 // int sizeM = GetRandomValue();
 // Console.WriteLine("Task 59");
-// if (sizeN < 1 | sizeM < 1)
+// if (sizeN < 2 | sizeM < 2)
 // {
 //     Console.WriteLine("This operation is not possible");
 // }
@@ -412,7 +493,9 @@ void PrintMyArray(int[,] myArray)
 //     Console.WriteLine("--------------");
 
 //     var indexMin = SearchMinIndex(myArray);
-//     Console.WriteLine($"The index of min is {string.Join(", ", indexMin)}");
+//     Console.WriteLine($"The index of min is {indexMin[0, 0]}, {indexMin[0, 1]}");
+//     Console.WriteLine("--------------");
+
 //     int [,] reducedArray = GetReducedArray(myArray, indexMin);
 //     PrintMyArray(reducedArray);
 // }
