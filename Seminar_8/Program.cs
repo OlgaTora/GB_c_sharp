@@ -50,39 +50,39 @@ void PrintMyArray(int[,] myArray)
 // 9 5 3 2
 // 8 4 4 2
 
-int[,] GetSortArray(int [,] myArray)
-{
-    int tmp = myArray[0, 0];
+// int[,] GetSortArray(int [,] myArray)
+// {
+//     int tmp = myArray[0, 0];
 
-    for (int i = 0; i < myArray.GetLength(0); i++)
-    {
-        for (int j = 0; j < myArray.GetLength(1) - 1; j++)
-        {   
-            for (int k = 0; k < myArray.GetLength(1) -1; k++)
-            {   
-                if (myArray[i, k] < myArray[i, k + 1])
-                {
-                    tmp = myArray[i, k];
-                    myArray[i, k] = myArray[i, k + 1];
-                    myArray[i, k + 1] = tmp;
-                } 
-            }
-        }
-    }
-    return myArray;
-}
+//     for (int i = 0; i < myArray.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < myArray.GetLength(1) - 1; j++)
+//         {   
+//             for (int k = 0; k < myArray.GetLength(1) -1; k++)
+//             {   
+//                 if (myArray[i, k] < myArray[i, k + 1])
+//                 {
+//                     tmp = myArray[i, k];
+//                     myArray[i, k] = myArray[i, k + 1];
+//                     myArray[i, k + 1] = tmp;
+//                 } 
+//             }
+//         }
+//     }
+//     return myArray;
+// }
 
-Console.Clear();
-Console.WriteLine("Task 54");
+// Console.Clear();
+// Console.WriteLine("Task 54");
 
-int sizeN = GetRandomValue();
-int sizeM = GetRandomValue();
-int [,] myArray = GetFilledArray(sizeN, sizeM);
-Console.WriteLine("Sorted array is: ");
+// int sizeN = GetRandomValue();
+// int sizeM = GetRandomValue();
+// int [,] myArray = GetFilledArray(sizeN, sizeM);
+// Console.WriteLine("Sorted array is: ");
 
-var sortArray = GetSortArray(myArray);
-PrintMyArray(sortArray);
-Console.WriteLine("-------------");
+// var sortArray = GetSortArray(myArray);
+// PrintMyArray(sortArray);
+// Console.WriteLine("-------------");
 
 // Задача 56: Задайте прямоугольный двумерный массив. Напишите программу, которая будет находить
 //строку с наименьшей суммой элементов.
